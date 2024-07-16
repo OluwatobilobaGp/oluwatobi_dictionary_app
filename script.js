@@ -3,11 +3,15 @@ const result = document.getElementById("result");
 const sound = document.getElementById("sound");
 const btn = document.getElementById("search-btn");
 
-btn.addEventListener("click", () => {
+$(document).ready(function () {
+  btn.addEventListener("click", () => {
     let inpWord = document.getElementById("inp-word").value;
-    fetch(`${url}${inpWord}`).then((response) => response.json()).then((data) => {
+    fetch(`${url}${inpWord}`)
+      .then((response) => response.json())
+      .then((data) => {
         console.log(data);
-        result.innerHTML = ` `;
-        
-    });
+        result.innerHTML = `
+`;
+      });
+  });
 });
